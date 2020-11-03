@@ -6,7 +6,7 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 18:05:31 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/03 14:44:07 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/03 19:25:29 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 {
+	char	*result;
 	size_t	length;
 
-	length = 0;
-	while (*dst)
+	result = dst;
+	if (n == 0 || (dst == 0 && src == 0))
+		return (0);
+	length = ft_strlen(src);
+	while (--n && *src)
 	{
-		if (n > 0)
-			*dst = *src;
-		else
-			*dst = 0;
-		dst++;
+		*result = *src;
 		src++;
-		n--;
-		length++;
+		result++;
 	}
-	if (length > n)
-		return (n++);
+	*result = 0;
+	if (length < n)
+		return (length);
 	else
-		return (length++);
+		return (n - 1);
 }

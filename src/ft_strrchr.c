@@ -6,7 +6,7 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 16:22:07 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/03 15:55:45 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/03 18:06:46 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strrchr(const char *s, int c)
 
 	temp = (char *)s;
 	while (*temp)
-		s++;
-	while (*temp)
+		temp++;
+	while (temp != s - 1)
 	{
 		if (*temp == (char)c)
 			return (temp);

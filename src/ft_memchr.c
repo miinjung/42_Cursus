@@ -6,7 +6,7 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 16:48:58 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/03 15:36:48 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/03 17:36:34 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*temp;
+	unsigned char	*temp;
 
-	temp = (char *)s;
+	temp = (unsigned char *)s;
 	while (n--)
 	{
 		if (*temp == (unsigned char)c)
-			return ((void *)s);
-		s++;
+			return (temp);
+		temp++;
 	}
 	return (0);
 }
