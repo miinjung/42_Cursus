@@ -6,11 +6,11 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:32:43 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/02 21:35:52 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/03 15:57:35 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
@@ -18,6 +18,6 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (!(result = (void *)malloc(count * size)))
 		return (0);
-	memset(result, count, size);
+	ft_memset(result, count, size);
 	return (result);
 }

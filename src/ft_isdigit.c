@@ -6,11 +6,11 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:20:45 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/02 21:31:44 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/03 14:43:26 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_header.h"
+#include "libft.h"
 
 int		ft_isdigit(int c)
 {

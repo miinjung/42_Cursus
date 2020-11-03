@@ -6,11 +6,13 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 15:06:49 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/02 18:10:14 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/03 15:58:57 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	bzero(void *ptr, size_t size)
+#include "libft.h"
+
+void	ft_bzero(void *ptr, size_t size)
 {
 	while (size--)
 		*(char *)ptr++ = 0;

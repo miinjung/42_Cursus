@@ -6,11 +6,11 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:29:55 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/02 21:14:00 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/03 14:44:29 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_header.h"
+#include "libft.h"
 
 int		ft_toupper(int c)
 {

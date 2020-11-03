@@ -6,13 +6,13 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:24:01 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/02 21:31:40 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/03 15:59:26 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_header.h"
+#include "libft.h"
 
-int		ft_isalnnum(int c)
+int		ft_isalnum(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (1);

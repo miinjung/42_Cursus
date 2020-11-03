@@ -6,11 +6,11 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:17:36 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/02 21:31:42 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/03 14:43:17 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_header.h"
+#include "libft.h"
 
 int		ft_isalpha(int c)
 {

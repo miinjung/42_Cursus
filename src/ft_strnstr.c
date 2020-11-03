@@ -6,20 +6,20 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 16:30:02 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/02 21:21:20 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/03 15:55:48 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_header.h"
+#include "libft.h"
 
-char	*strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	char	*temp;
 	size_t	n;
 	size_t	little_len;
 	size_t	index;
 
-	temp = big;
+	temp = (char *)big;
 	n = 0;
 	little_len = 0;
 	while (*(little + little_len))

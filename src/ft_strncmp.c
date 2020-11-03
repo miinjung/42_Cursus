@@ -6,13 +6,13 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:02:33 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/02 21:20:26 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/03 15:56:58 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_header.h"
+#include "libft.h"
 
-int		strncmp(const char *str1, const char *str2, size_t count)
+int		ft_strncmp(const char *str1, const char *str2, size_t count)
 {
 	size_t	index;
 
