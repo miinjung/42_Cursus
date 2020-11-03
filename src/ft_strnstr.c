@@ -6,7 +6,7 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 16:30:02 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/03 15:55:48 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/03 22:24:21 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,25 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char	*temp;
-	size_t	n;
-	size_t	little_len;
-	size_t	index;
+	size_t	big_index;
+	size_t	little_index;
 
-	temp = (char *)big;
-	n = 0;
-	little_len = 0;
-	while (*(little + little_len))
-		little_len++;
-	if (*little == 0)
-		return (temp);
-	while (n < len - little_len)
+	big_index = 0;
+	little_index = 0;
+	if (*little == 0 || len == 0)
+		return ((char *)big);
+	while (big_index + little_index < len && big[big_index + little_index])
 	{
-		if (*(temp + n) == *(little))
+		if (big[big_index + little_index] == little[big_index + little_index])
+			little_index++;
+		else
 		{
-			index = 0;
-			while (*(temp + n + index) != *(little + index))
-				index++;
-			if (index == little_len)
-				return (temp + n);
+			big_index++;
+			if (little_index != 0)
+				little_index = 0;
 		}
-		n++;
+		if (little[little_index] == 0)
+			return ((char *)big + big_index);
 	}
 	return (0);
 }
