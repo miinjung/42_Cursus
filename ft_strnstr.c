@@ -6,7 +6,7 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 16:30:02 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/03 22:24:21 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/04 17:24:53 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,16 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	big_index = 0;
 	little_index = 0;
-	if (*little == 0 || len == 0)
+	if (*little == 0)
 		return ((char *)big);
 	while (big_index + little_index < len && big[big_index + little_index])
 	{
-		if (big[big_index + little_index] == little[big_index + little_index])
+		if (big[big_index + little_index] == little[little_index])
 			little_index++;
 		else
 		{
 			big_index++;
-			if (little_index != 0)
-				little_index = 0;
+			little_index = 0;
 		}
 		if (little[little_index] == 0)
 			return ((char *)big + big_index);
