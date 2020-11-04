@@ -6,7 +6,7 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:10:46 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/04 17:27:40 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/04 19:58:53 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ int		ft_atoi(const char *str)
 	{
 		if (*str < '0' || *str > '9')
 			break ;
-		result = result * 10 + (*str - '0');
-		str++;
+		result = result * 10 + (*str++ - '0');
 	}
 	if (result > 2147483647 && type == 1)
 		return (-1);
