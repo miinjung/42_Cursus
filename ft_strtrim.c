@@ -6,7 +6,7 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 20:32:19 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/04 21:36:08 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/06 17:58:41 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,28 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*result;
-	size_t	length_1;
-	size_t	length_2;
-	size_t	index;
+	size_t	length;
+	size_t	start;
+	size_t	end;
 
-	length_1 = ft_strlen(s1);
-	length_2 = ft_strlen(set);
-	index = 0;
-	if (!(result = (char *)malloc(length_1 + 1)))
+	if (s1 == 0 || set == 0)
 		return (0);
-	while (*s1)
+	length = ft_strlen(s1);
+	start = 0;
+	end = length;
+	while (*(s1 + start) && ft_strchr(set, *(s1 + start)))
+		start++;
+	while (*(s1 + end - 1) && ft_strchr(set, *(s1 + end - 1)))
+		end--;
+	if (start > end)
 	{
-		if (ft_strncmp(s1, set, length_2) == 0)
-			s1 += length_2;
-		else
-		{
-			*(result + index) = *s1;
-			index++;
-			s1++;
-		}
+		if (!(result = (char *)malloc(1)))
+			return (0);
+		*result = 0;
+		return (result);
 	}
+	if (!(result = (char *)malloc(end - start + 1)))
+		return (0);
+	ft_strlcpy(result, s1 + start, end - start + 1);
 	return (result);
 }

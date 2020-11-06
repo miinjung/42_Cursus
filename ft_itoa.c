@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 20:01:02 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/06 17:12:54 by michoi           ###   ########.fr       */
+/*   Created: 2020/11/06 15:33:27 by michoi            #+#    #+#             */
+/*   Updated: 2020/11/06 16:35:59 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_itoa(int n)
 {
-	char	*result;
+	char			*result;
+	unsigned int	temp;
+	int				index;
+	int				seperator;
 
-	if (s == 0)
+	index = 0;
+	seperator = 1000000000;
+	if (!(result = (char *)malloc(12)))
 		return (0);
-	if (!(result = (char *)malloc(len + 1)))
-		return (0);
-	if (start < ft_strlen(s))
-		ft_strlcpy(result, s + start, len + 1);
+	if (n < 0)
+	{
+		result[index++] = '-';
+		temp = n * (-1);
+	}
+	else
+		temp = n;
+	while (seperator == 0)
+	{
+		if (seperator < n)
+			result[index++] = (temp / seperator) % 10;
+		temp /= seperator;
+		seperator /= 10;
+	}
 	return (result);
 }
