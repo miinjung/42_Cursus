@@ -6,7 +6,7 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 16:43:04 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/06 16:44:29 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/09 21:41:47 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,16 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*input;
+	unsigned int	temp;
 
-	input = ft_itoa(n);
-	ft_putstr_fd(input, fd);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		temp = -n;
+	}
+	else
+		temp = n;
+	if (temp / 10 != 0)
+		ft_putnbr_fd(temp / 10, fd);
+	ft_putchar_fd(temp % 10 + '0', fd);
 }
