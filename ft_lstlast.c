@@ -6,7 +6,7 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 17:26:50 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/16 17:29:24 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/16 20:08:19 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*temp;
-
-	temp = lst;
-	while (temp->next)
+	if (lst == 0)
+		return (0);
+	while (lst->next)
 	{
-		temp = temp->next;
+		lst = lst->next;
 	}
-	return (temp);
+	return (lst);
 }

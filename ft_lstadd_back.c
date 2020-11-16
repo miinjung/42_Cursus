@@ -6,7 +6,7 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 17:30:30 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/16 17:46:58 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/16 20:13:40 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*temp;
 
-	temp = *lst;
-	while (temp->next)
+	if (lst == 0 || new == 0)
+		return ;
+	if (*lst == 0)
 	{
-		temp = temp->next;
+		*lst = new;
+		return ;
 	}
-	temp->next = new;
+	temp = *lst;
+	ft_lstlast(*lst)->next = new;
 }
