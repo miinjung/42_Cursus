@@ -6,7 +6,7 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 21:32:17 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/17 14:42:36 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/17 14:46:03 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void			ft_lstadd_back(t_list **lst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list			*ft_lstmap(t_list *lst, \
+				void *(*f)(void *), void (*del)(void *));
 
 #endif
