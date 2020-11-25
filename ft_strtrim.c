@@ -6,7 +6,7 @@
 /*   By: michoi <michoi@student.42soul.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 20:32:19 by michoi            #+#    #+#             */
-/*   Updated: 2020/11/11 19:19:00 by michoi           ###   ########.fr       */
+/*   Updated: 2020/11/25 15:45:20 by michoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*result;
-	size_t	length;
-	size_t	start;
-	size_t	end;
+	int		length;
+	int		start;
+	int		end;
 
 	if (s1 == 0 || set == 0)
 		return (0);
